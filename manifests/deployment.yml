@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jesperhauchpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jesperhauchpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: jesperhauchpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: jesperhauchpipelinesjavascriptdocker 
+          image: jesperregistry.azurecr.io/jesperhauchpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
